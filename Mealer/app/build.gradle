@@ -1,0 +1,81 @@
+ plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    compileSdkVersion 33
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.example.mealer_project"
+        minSdkVersion 19
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        applicationVariants.all{
+            // this method is use to rename your all apk weather
+            // it may be signed or unsigned(debug apk)
+            variant ->
+                variant.outputs.each{
+                    // on below line we are setting a
+                    // name to our apk as GFG.apk
+                    output->
+                        def name = "group4_debug.apk"
+                        // on below line we are setting the
+                        // outputFile Name to our apk file.
+                        output.outputFileName = name
+                }
+       }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-database:20.1.0'
+    implementation 'androidx.annotation:annotation:1.5.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation 'com.google.firebase:firebase-auth:21.1.0'
+    implementation 'com.google.firebase:firebase-firestore:24.4.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation files('libs\\activation.jar')
+    implementation files('libs\\additionnal.jar')
+    implementation files('libs\\mail.jar')
+    implementation files('libs/activation.jar')
+    implementation files('libs/additionnal.jar')
+    implementation files('libs/mail.jar')
+    testImplementation 'junit:junit:'
+    testImplementation 'org.testng:testng:6.9.6'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:31.0.0')
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-auth'
+    //
+    implementation 'com.google.android.material:material:1.4.0'
+}

@@ -1,0 +1,148 @@
+package com.example.mealer_project.app;
+
+import android.util.Log;
+
+import com.example.mealer_project.data.handlers.DataHandlers;
+import com.example.mealer_project.data.models.User;
+import com.example.mealer_project.data.models.UserRoles;
+import com.example.mealer_project.data.models.inbox.AdminInbox;
+import com.example.mealer_project.data.sources.FirebaseRepository;
+import com.example.mealer_project.ui.screens.ChefScreen;
+import com.example.mealer_project.ui.screens.completed_orders.CompletedOrdersScreen;
+import com.example.mealer_project.ui.screens.pending_orders.PendingOrdersScreen;
+import com.example.mealer_project.ui.screens.meals.MealsListScreen;
+import com.example.mealer_project.utils.Preconditions;
+import com.google.firebase.auth.FirebaseAuth;
+
+import org.checkerframework.checker.units.qual.A;
+
+public class AppInstance {
+
+    // singleton instance
+    private static AppInstance appInstance;
+
+    private FirebaseRepository primaryDatabase;
+    private DataHandlers appDataHandlers;
+    private User user;
+    private AdminInbox adminInbox;
+    private MealsListScreen mealsListScreen;
+    private PendingOrdersScreen pendingOrdersScreen;
+    private CompletedOrdersScreen completedOrdersScreen;
+    private ChefScreen chefScreen;
+
+    /**
+     * Private default constructor
+     */
+    private AppInstance() {
+        this.initializeApp();
+    }
+
+    /**
+     * Initializes a new App instance if it doesn't already exist.
+     * Returns the instance of AppInstance
+     * @return reference to an AppInstance
+     */
+    public static AppInstance getAppInstance() {
+        return (appInstance == null) ? new AppInstance() : appInstance;
+    }
+
+    public void initializeApp() {
+        // set firebase to be the primary database
+        primaryDatabase = new FirebaseRepository(FirebaseAuth.getInstance());
+        // initialize App's local data handlers
+        appDataHandlers = new DataHandlers();
+    }
+
+    public boolean isUserAuthenticated() {
+        return this.user != null;
+    }
+
+    public DataHandlers getAppDataHandler() {
+        return this.appDataHandlers;
+    }
+
+    public FirebaseRepository getPrimaryDatabase() {
+        return this.primaryDatabase;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public User getUser() {
+        return this.user;
+    }
+
+    public boolean userIsAdmin() {
+        return (user != null && user.getRole() == UserRoles.ADMIN);
+    }
+
+    /**
+     * Sets app's admin inbox
+     * @param adminInbox AdminInbox instance
+     */
+    public void setAdminInbox(AdminInbox adminInbox) throws NullPointerException {
+        if (Preconditions.isNotNull(adminInbox)) {
+            this.adminInbox = adminInbox;
+        } else {
+            Log.e("setAdminInbox", "App instance received a null object for adminInbox");
+            throw new NullPointerException("Unable to create admin inbox");
+        }
+    }
+
+    /**
+     * @return Returns AdminInbox if current user is admin
+     * @throws IllegalAccessException if user is not admin but tries to access AdminInbox
+     */
+    public AdminInbox getAdminInbox() throws IllegalAccessException {
+        if (userIsAdmin()) {
+            return this.adminInbox;
+        } else {
+            Log.e("getAdminInbox", "Either user is null or user role is not admin");
+            throw new IllegalAccessException("User does not have access to admin inbox");
+        }
+    }
+
+    public MealsListScreen getMealsListScreen() {
+        return mealsListScreen;
+    }
+
+    public void setMealsListScreen(MealsListScreen mealsListScreen) {
+        this.mealsListScreen = mealsListScreen;
+    }
+
+    public PendingOrdersScreen getPendingOrdersScreen() {
+        return pendingOrdersScreen;
+    }
+
+    public void setPendingOrdersScreen(PendingOrdersScreen pendingOrdersScreen) {
+        this.pendingOrdersScreen = pendingOrdersScreen;
+    }
+
+    public ChefScreen getOrdersInProgressScreen() {
+        return chefScreen;
+    }
+
+    public void setOrdersInProgressScreen(ChefScreen chefScreen) {
+        this.chefScreen = chefScreen;
+    }
+
+    public CompletedOrdersScreen getCompletedOrdersScreen() {
+        return completedOrdersScreen;
+    }
+
+    public void setCompletedOrdersScreen(CompletedOrdersScreen completedOrdersScreen) {
+        this.completedOrdersScreen = completedOrdersScreen;
+    }
+
+    /**
+     * Handle user logout
+     */
+    public void logoutUser() {
+        // remove user
+        this.setUser(null);
+        // sign user out
+        FirebaseAuth.getInstance().signOut();
+    }
+
+}

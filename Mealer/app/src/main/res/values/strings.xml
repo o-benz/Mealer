@@ -1,0 +1,137 @@
+<resources>
+    <string name="app_name">Mealer Project</string>
+    <string name="title_activity_login">Login</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="logo_here">logo_here</string>
+    <string name="log_in">LOG IN</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="instruction_text">Please submit an image of a void cheque for payment:</string>
+    <string name="submit_text"><![CDATA[Submit ->]]></string>
+    <string name="take_photo">Take Photo</string>
+    <string name="upload_photo">Upload Image/File</string>
+    <string name="photo_button_description">Press to take picture of void cheque</string>
+    <string name="upload_button_description">Upload an image of void cheque</string>
+    <string name="logoDescription">an image of our logo</string>
+    <string name="title">Mealer</string>
+    <string name="signUpBtn">SIGN UP</string>
+    <string name="sign_up_underline"><u>Sign up</u></string>
+    <string name="loginBtn">LOG IN</string>
+    <string name="complaint_header">Complaint Title Here</string>
+    <string name="client_name">Client:</string>
+    <string name="chef_name" />
+    <string name="chefs_name">Chef:</string>
+    <string name="meal_name">Meal</string>
+    <string name="description_title">Description:</string>
+    <string name="ban_chef">Ban Until</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="complaint_information">Complaint Here</string>
+    <string name="ban_permanent">Ban Indefinitely</string>
+    <string name="chef_permanent_ban_message">Your account has been permanently suspended.</string>
+    <string name="chef_temp_ban_message">Your account has been temporarily suspended until</string>
+    <string name="what_meal_would_you_like_to_add">WHAT MEAL WOULD YOU LIKE TO ADD?</string>
+    <string name="meal_type">Meal type:</string>
+    <string-array name="menu_types_array">
+        <item>(Select meal type)</item>
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Brunch</item>
+        <item>Dinner</item>
+        <item>Appetizer</item>
+        <item>Entrée</item>
+        <item>Dessert</item>
+        <item>Soup</item>
+        <item>Bakery</item>
+        <item>Beverages</item>
+    </string-array>
+    <string name="cuisine_type">Cuisine Type</string>
+    <string name="ingredients">Ingredients:</string>
+    <string name="allergen">Allergens:</string>
+    <string name="gluten">Gluten</string>
+    <string name="peanuts">Peanuts</string>
+    <string name="treenuts">Tree nuts</string>
+    <string name="celery">Celery</string>
+    <string name="mustard">Mustard</string>
+    <string name="eggs">Eggs</string>
+    <string name="milk">Milk</string>
+    <string name="sesame">Sesame</string>
+    <string name="crustaceans">Crustaceans</string>
+    <string name="fish">Fish</string>
+    <string name="molluscs">Molluscs</string>
+    <string name="soya">Soya</string>
+    <string name="sulphites">Sulphites</string>
+    <string name="lupin">Lupin</string>
+    <string name="price">Price</string>
+    <string name="back">Back</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="offer_meal">Offer meal?</string>
+    <string name="meal_item_offered_label">Offered:</string>
+    <string name="meal_item_cuisine_label">Cuisine:</string>
+    <string name="submit">Submit</string>
+    <string name="view_orders">View Orders</string>
+    <string name="my_menu">Menu</string>
+    <string name="view_offered_meals">Offered Meals</string>
+    <string name="add_meal">Add Meal</string>
+    <string name="meals_label">Meals</string>
+    <string name="orders_label">Orders</string>
+    <string name="view_pending_orders_label">Pending Orders</string>
+    <string name="view_completed_orders_label">Past Orders</string>
+    <string name="type_of_meal">Type of Meal:</string>
+    <string name="type_of_cuisine">Cuisine Type:</string>
+    <string name="unable_to_get_info">unable to get info</string>
+    <string name="any_special_instructions">Any special instructions for the chef?</string>
+    <string name="checkout">Checkout</string>
+    <string name="add_or_remove_from_cart">Add/Remove From Cart</string>
+    <string name="order">Order</string>
+    <string name="minus">-</string>
+    <string name="number">#</string>
+    <string name="plus">+</string>
+    <string name="spinner_description">spinner description</string>
+    <string name="meal_name_here">Meal Name Here</string>
+    <string name="search_meals_btn_label">Search Meals</string>
+    <string name="made_by">Made by Chef:</string>
+    <string name="special_instructions">Special Instructions:</string>
+    <string name="orders_in_progress">Orders In Progress</string>
+    <string name="completed">Complete</string>
+    <string name="view_all_orders_label">View All Orders</string>
+    <string name="meal_name_text">Meal Name</string>
+    <string name="date">Date</string>
+    <string name="chef_name_label">Chef Name</string>
+    <string name="client_name_label">Client Name</string>
+    <string name="fileComplaint_button">File Complaint</string>
+    <string name="quantity">Quantity #</string>
+    <string name="ratingBar">clientRateChefRatingBar</string>
+    <string name="reject_button">Reject</string>
+    <string name="accept_button">Accept</string>
+    <string name="make_complaint">File Complaint</string>
+    <string name="write_complaint">Please write your complaint:</string>
+    <string name="description_here">Description Here:</string>
+    <string name="title_here">Title:</string>
+    <string name="no_search_result_message">Sorry! No meals found!</string>
+    <string name="total_cost_label">Total Cost:</string>
+    <string name="total_cost_default_amount">0</string>
+    <string name="pay_using_label">Pay using:</string>
+    <string name="default_client_card_info">unable to load card</string>
+    <string name="search">Food, drinks, etc.</string>
+    <string name="your_orders">Your Orders</string>
+    <string name="chefRatingBarDescription">This is the rating for the chef</string>
+    <string name="chefRatingLabel">Chef Rating:</string>
+    <string name="chefName">Chef Name</string>
+    <string name="chefLabel">Chef:</string>
+    <string name="mealDescription">Meal Description</string>
+    <string name="description">Description</string>
+    <string name="mealName">Meal Name</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="os_chef_address_label">Chef\'s address:</string>
+    <string name="os_chef_rating_label">Rating:</string>
+    <string name="accepted_order_status_being_prepared">being prepared</string>
+    <string name="os_chef_desc_label">Description:</string>
+    <string name="num_of_meals_sold">Number of Meals Sold:</string>
+    <string name="profile">Profile</string>
+</resources>

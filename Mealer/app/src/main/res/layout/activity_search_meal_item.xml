@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/smItemContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    android:background="@drawable/input_box_shadow"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".ui.screens.meals.MealsListItem">
+
+    <TextView
+        android:id="@+id/smMealId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/smMealName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_sans"
+        android:gravity="center_vertical"
+        android:minHeight="50dp"
+        android:text="@string/mealName"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider" />
+
+    <TextView
+        android:id="@+id/smDescriptionLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/nunito_sans"
+        android:text="@string/description"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/smMealDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_sans"
+        android:minHeight="70dp"
+        android:text="@string/mealDescription"
+        android:textColor="@color/black" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/smChefLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/smChefLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_sans"
+                android:gravity="center_vertical"
+                android:text="@string/chefLabel"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/smChef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/nunito_sans"
+                android:gravity="center_vertical"
+                android:minHeight="50dp"
+                android:text="@string/chefName"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider7"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:id="@+id/smRatingLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minHeight="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/smRatingLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_sans"
+                android:text="@string/chefRatingLabel"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <RatingBar
+                android:id="@+id/smChefRating"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:contentDescription='@string/chefRatingBarDescription'
+                android:isIndicator="true"
+                android:scaleX="0.6"
+                android:scaleY="0.6" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
